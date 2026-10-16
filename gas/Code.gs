@@ -4,8 +4,15 @@
  */
 
 const PRODUCT_LIST = [
+  // 單品散買
+  { id: 's01', name: '厚切排骨（單片）', price: 123 },
+  { id: 's02', name: '金饌雞腿（單片）', price: 139 },
+  { id: 's03', name: '鹹酥雞腿肉（單包）', price: 250 },
+  { id: 's04', name: '挪威鯖魚片（單片）', price: 160 },
+  // 綜合十果
   { id: 'p01', name: '綜合十果 2小包', price: 330 },
   { id: 'p02', name: '綜合十果 1盒', price: 1085 },
+  // 超值套組
   { id: 'p03', name: '鹹酥雞腿肉 8包', price: 1998 },
   { id: 'p04', name: '鹽酥雞腿肉6包+起司披薩2片', price: 1948 },
   { id: 'p05', name: '厚切排骨12片＋金饌雞腿12片', price: 2990 },
@@ -16,10 +23,9 @@ const PRODUCT_LIST = [
   { id: 'p10', name: '排骨5+雞腿5+鯖魚3', price: 1950 },
   { id: 'p11', name: '排骨4+雞腿4+鹽酥雞2', price: 1680 },
   { id: 'p12', name: '排骨3+雞腿3+鹽酥雞1+披薩1', price: 1340 },
-  { id: 'p13', name: '鹹酥雞腿肉', price: 250 },
+  // 加購品
   { id: 'p14', name: '厚切里肌', price: 263 },
   { id: 'p15', name: '起司披薩1片+鹽酥雞1包', price: 440 },
-  { id: 'p16', name: '挪威鯖魚片', price: 160 },
   { id: 'p17', name: '特級麻辣養生鍋底', price: 380 },
   { id: 'p18', name: '泰式酸辣鍋底', price: 380 },
   { id: 'p19', name: '義式蕃茄鍋底', price: 380 },

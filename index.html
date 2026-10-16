@@ -57,6 +57,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;b
 .btn-copy{background:#3c91ad;color:#fff;border:none;border-radius:8px;padding:8px 20px;font-size:.9em;cursor:pointer;margin-top:8px}
 .ended-msg{text-align:center;padding:40px 20px;font-size:1.1em;color:#eb1d4e;font-weight:700}
 .shipping-note{text-align:center;padding:10px 16px;font-size:.82em;color:#666;margin-top:4px}
+.discount-note{background:#fff8e1;border:1.5px dashed #f0a830;border-radius:10px;margin:12px 12px 0;padding:12px 16px;text-align:center;font-size:.88em;color:#8a6d10;font-weight:600;line-height:1.5}
 footer{text-align:center;padding:20px 16px 90px;font-size:.75em;color:#aaa}
 </style>
 </head>
@@ -69,6 +70,7 @@ footer{text-align:center;padding:20px 16px 90px;font-size:.75em;color:#aaa}
 
 <div class="countdown-bar" id="countdown">⏰ 載入中...</div>
 <div class="shipping-note">🚚 黑貓宅急便冷凍（台灣本島）免運｜結團後 5-7 工作天出貨</div>
+<div class="discount-note">💡 單品可以只買 1 片！團主會統一湊滿組數，届時依套組優惠價結算，等於大家一起省 🎉</div>
 
 <div id="app"></div>
 
@@ -88,6 +90,12 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbxZiveEO8_255SmX4KC6SOj
 const DEADLINE = new Date('2026-10-21T18:00:00+08:00');
 
 const PRODUCTS = {
+  '🍖 單品散買（可只買 1 片，湊滿組數享折扣）': [
+    { id:'s01', name:'厚切排骨（單片）', price:123, spec:'1片', img:'images/p07.avif' },
+    { id:'s02', name:'金饌雞腿（單片）', price:139, spec:'1片', img:'images/p08.avif' },
+    { id:'s03', name:'鹹酥雞腿肉（單包）', price:250, spec:'300g', img:'images/p13.avif' },
+    { id:'s04', name:'挪威鯖魚片（單片）', price:160, spec:'L號 約170g', img:'images/p16.avif' },
+  ],
   '🍇 綜合十果（新品）': [
     { id:'p01', name:'綜合十果 2小包', price:330, spec:'2入', img:'images/p01.avif' },
     { id:'p02', name:'綜合十果 1盒', price:1085, spec:'共7包', img:'images/p02.avif' },
@@ -104,11 +112,9 @@ const PRODUCTS = {
     { id:'p11', name:'排骨4+雞腿4+鹽酥雞2', price:1680, spec:'', img:'images/p11.avif' },
     { id:'p12', name:'排骨3+雞腿3+鹽酥雞1+披薩1', price:1340, spec:'', img:'images/p12.avif' },
   ],
-  '🛒 加購單品': [
-    { id:'p13', name:'鹹酥雞腿肉', price:250, spec:'300g', img:'images/p13.avif' },
+  '🛒 加購品': [
     { id:'p14', name:'厚切里肌', price:263, spec:'500g', img:'images/p14.avif' },
     { id:'p15', name:'起司披薩1片+鹽酥雞1包', price:440, spec:'', img:'images/p15.avif' },
-    { id:'p16', name:'挪威鯖魚片', price:160, spec:'L號 約170g', img:'images/p16.avif' },
     { id:'p17', name:'特級麻辣養生鍋底', price:380, spec:'70g×5小包', img:'images/p17.avif' },
     { id:'p18', name:'泰式酸辣鍋底', price:380, spec:'70g×5小包', img:'images/p18.avif' },
     { id:'p19', name:'義式蕃茄鍋底', price:380, spec:'70g×5小包', img:'images/p19.avif' },
